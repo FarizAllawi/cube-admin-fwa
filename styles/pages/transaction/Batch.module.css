@@ -1,0 +1,39 @@
+.containerContent{
+    display: flex;
+    flex-direction: column;
+}
+
+.tableHeaderColumn{
+    color: green;
+    font-size: medium;
+}
+
+.tableLoading{
+    margin: auto;
+}
+
+.disabledButton{
+    background-color: #36D079;
+    color: white;
+    border-color: #17C964;
+}
+
+.modalPickers{
+    display: flex;
+    flex-direction: column;
+    padding: auto;
+    height: 100%;
+}
+.datePicker{
+    overflow:visible;
+    height: 100%;
+}
+
+.unclickeableBtn{
+    pointer-events: none;
+}
+
+.unclickeableBtn:hover{
+    pointer-events: none;
+    cursor: default;
+}

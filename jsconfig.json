@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "baseUrl": "src",
+        "module" : "CommonJS",
+        "target": "ESNext",
+    },
+    "exclude": ["node_modules"],
+    "include": [
+        "*",
+    ]
+}

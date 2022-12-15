@@ -1,0 +1,72 @@
+.backClass{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.backClassText{
+    margin-left: 1vw;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.backClassText:hover{
+    color: #17C964;
+    cursor: default;
+}
+
+.backClassTexts:hover{
+    color: #17C964;
+    cursor: pointer;
+}
+
+.titleInvoice{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titleInvoiceText{
+    margin-top: -1.5vw;
+    color: #17C964;
+}
+
+.containerContent{
+    display: flex;
+    flex-direction: column;
+}
+
+.tableHeaderColumn{
+    color: green;
+    font-size: medium;
+}
+
+.tableLoading{
+    margin: auto;
+}
+
+.disabledButton{
+    background-color: #36D079;
+    color: white;
+    border-color: #17C964;
+}
+
+.modalPickers{
+    display: flex;
+    flex-direction: column;
+    padding: auto;
+    height: 100%;
+}
+.datePicker{
+    overflow:visible;
+    height: 100%;
+}
+
+.unclickeableBtn{
+    pointer-events: none;
+}
+
+.unclickeableBtn:hover{
+    pointer-events: none;
+    cursor: default;
+}

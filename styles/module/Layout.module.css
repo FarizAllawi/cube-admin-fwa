@@ -1,0 +1,13 @@
+.iconLogoKCH:hover{
+    cursor: pointer;
+}
+
+.phitext{
+    text-align: right;
+}
+
+
+.iconLogout{
+    border-radius: 10px;
+    cursor: pointer;
+}
