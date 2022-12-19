@@ -394,7 +394,7 @@ export default function Desk(props) {
                 </Table.Header>
                 <Table.Body>
                   {
-                    deskSectionDataTemp.length > 0 && (
+                    deskSectionDataTemp?.length > 0 && (
                       deskSectionDataTemp?.map((item, index) => {
                         return (
                           <Table.Row key={index}>

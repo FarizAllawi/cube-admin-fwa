@@ -426,90 +426,92 @@ export default function User(props) {
                 </Table.Header>
                 <Table.Body>
                   {
-                    userDataTemp?.map((item, index) => {
-                      return (
-                        <Table.Row key={index}>
-                          <Table.Cell>{item.nik}</Table.Cell>
-                          <Table.Cell>{item.name}</Table.Cell>
-                          <Table.Cell>{item.email}</Table.Cell>
-                          <Table.Cell>{item.deptName}</Table.Cell>
-                          <Table.Cell>{item.divName}</Table.Cell>
-                          <Table.Cell>
-                            <Row justify="center" align="center">
-                              <Col css={{ d: "flex" }}>
-                                <Tooltip content="Details">
-                                  <IconButton onClick={() => setDetailsModals(item)}>
-                                    <EyeIcon size={20} fill="#979797" />
-                                  </IconButton>
-                                </Tooltip>
-                              </Col>
-                              <Col css={{ d: "flex" }}>
-                                <Tooltip content="Edit User">
-                                  <IconButton onClick={() => {
-                                      setEditModals(item)
-                                      newState({
-                                        superior: new Set(["0_Select Superior For Update"]),
-                                        department: new Set(["0_Select Department For Update"]),
-                                        division: new Set(["0_Select Division For Update"]),
-                                        userAccess: new Set(["0_Select Access Type For Update"])
-                                      })
-                                  }}>
-                                    <EditIcon size={20} fill="#979797" />
-                                  </IconButton>
-                                </Tooltip>
-                              </Col>
-                              {
-                                user.nik !== item.nik ? (
-                                  <Col css={{ d: "flex" }}>
-                                    <Tooltip
-                                      content="Delete User"
-                                      color="error"
-                                      onClick={() => setDeleteModals(item)}
-                                    ><Popover>
-                                        <Popover.Trigger>
-                                          <IconButton>
-                                            <DeleteIcon size={20} fill="#FF0080" />
-                                          </IconButton>
-                                        </Popover.Trigger>
-                                        <Popover.Content>
-                                        <Grid.Container
-                                          css={{ borderRadius: "20px", padding: "0.75rem", maxWidth: "330px", boxShadow: "rgba(0,0,0, 0.5)" }}
-                                        >
-                                          <Row justify="center" align="center">
-                                            <Text b>Confirm</Text>
-                                          </Row>
-                                          <Row>
-                                            <Text>
-                                              Are you sure you want to delete this User
-                                            </Text>
-                                          </Row>
-                                          <Grid.Container justify="space-between" alignContent="center">
-                                            <Grid>
-                                              <Button size="sm" light>
-                                                Cancel
-                                              </Button>
-                                            </Grid>
-                                            <Grid>
-                                              <Button size="sm" color="error" onPress={() => deleteUser(item)}>
-                                                Delete
-                                              </Button>
-                                            </Grid>
+                    userDataTemp?.length > 0 && (
+                      userDataTemp?.map((item, index) => {
+                        return (
+                          <Table.Row key={index}>
+                            <Table.Cell>{item.nik}</Table.Cell>
+                            <Table.Cell>{item.name}</Table.Cell>
+                            <Table.Cell>{item.email}</Table.Cell>
+                            <Table.Cell>{item.deptName}</Table.Cell>
+                            <Table.Cell>{item.divName}</Table.Cell>
+                            <Table.Cell>
+                              <Row justify="center" align="center">
+                                <Col css={{ d: "flex" }}>
+                                  <Tooltip content="Details">
+                                    <IconButton onClick={() => setDetailsModals(item)}>
+                                      <EyeIcon size={20} fill="#979797" />
+                                    </IconButton>
+                                  </Tooltip>
+                                </Col>
+                                <Col css={{ d: "flex" }}>
+                                  <Tooltip content="Edit User">
+                                    <IconButton onClick={() => {
+                                        setEditModals(item)
+                                        newState({
+                                          superior: new Set(["0_Select Superior For Update"]),
+                                          department: new Set(["0_Select Department For Update"]),
+                                          division: new Set(["0_Select Division For Update"]),
+                                          userAccess: new Set(["0_Select Access Type For Update"])
+                                        })
+                                    }}>
+                                      <EditIcon size={20} fill="#979797" />
+                                    </IconButton>
+                                  </Tooltip>
+                                </Col>
+                                {
+                                  user.nik !== item.nik ? (
+                                    <Col css={{ d: "flex" }}>
+                                      <Tooltip
+                                        content="Delete User"
+                                        color="error"
+                                        onClick={() => setDeleteModals(item)}
+                                      ><Popover>
+                                          <Popover.Trigger>
+                                            <IconButton>
+                                              <DeleteIcon size={20} fill="#FF0080" />
+                                            </IconButton>
+                                          </Popover.Trigger>
+                                          <Popover.Content>
+                                          <Grid.Container
+                                            css={{ borderRadius: "20px", padding: "0.75rem", maxWidth: "330px", boxShadow: "rgba(0,0,0, 0.5)" }}
+                                          >
+                                            <Row justify="center" align="center">
+                                              <Text b>Confirm</Text>
+                                            </Row>
+                                            <Row>
+                                              <Text>
+                                                Are you sure you want to delete this User
+                                              </Text>
+                                            </Row>
+                                            <Grid.Container justify="space-between" alignContent="center">
+                                              <Grid>
+                                                <Button size="sm" light>
+                                                  Cancel
+                                                </Button>
+                                              </Grid>
+                                              <Grid>
+                                                <Button size="sm" color="error" onPress={() => deleteUser(item)}>
+                                                  Delete
+                                                </Button>
+                                              </Grid>
+                                            </Grid.Container>
                                           </Grid.Container>
-                                        </Grid.Container>
-                                        </Popover.Content>
-                                      </Popover>
-                                    </Tooltip>
-                                  </Col>
-                                ) : (
-                                  <Col css={{ d: "flex" }}></Col>
-                                )
-                                
-                              }
-                            </Row>
-                          </Table.Cell>
-                        </Table.Row>
-                      )
-                    })
+                                          </Popover.Content>
+                                        </Popover>
+                                      </Tooltip>
+                                    </Col>
+                                  ) : (
+                                    <Col css={{ d: "flex" }}></Col>
+                                  )
+                                  
+                                }
+                              </Row>
+                            </Table.Cell>
+                          </Table.Row>
+                        )
+                      })
+                    )
                   }
                 </Table.Body>
               </Table>
@@ -668,8 +670,8 @@ export default function User(props) {
                   >
                   <Dropdown.Item key="0_Select Superior For Update">Select Superior For Update</Dropdown.Item>
                   {
-                    userData.length > 0 && (
-                      userData.map((item, index) => {
+                    userData?.length > 0 && (
+                      userData?.map((item, index) => {
                         return (
                           <Dropdown.Item key={`${index+1}_${item.nik}-${item.name}`}>{item.nik} - {item.name}</Dropdown.Item>
                         )
@@ -701,8 +703,8 @@ export default function User(props) {
                   >
                   <Dropdown.Item key="0_Select Department For Update">Select Department For Update</Dropdown.Item>
                   {
-                    departmentData.length > 0 && (
-                      departmentData.map((item, index) => {
+                    departmentData?.length > 0 && (
+                      departmentData?.map((item, index) => {
                         return (
                           <Dropdown.Item key={`${index+1}_${item}`}>{item}</Dropdown.Item>
                         )
@@ -735,8 +737,8 @@ export default function User(props) {
 
                   <Dropdown.Item key="0_Select Department">Select Division For Update</Dropdown.Item>
                   {
-                    divisionData.length > 0 && (
-                      divisionData.map((item, index) => {
+                    divisionData?.length > 0 && (
+                      divisionData?.map((item, index) => {
                         return (
                           <Dropdown.Item key={`${index+1}_${item}`}>{item}</Dropdown.Item>
                         )
@@ -779,8 +781,8 @@ export default function User(props) {
                   >
                     <Dropdown.Item key="">Select Job Level</Dropdown.Item>
                     {
-                      jobLevelData.length > 0 && (
-                        jobLevelData.map((item, index) => {
+                      jobLevelData?.length > 0 && (
+                        jobLevelData?.map((item, index) => {
                           return (
                             <Dropdown.Item key={`${item}`}>{item}</Dropdown.Item>
                           )
@@ -972,8 +974,8 @@ export default function User(props) {
                   >
                   <Dropdown.Item key="0_Select Department">Select Department</Dropdown.Item>
                   {
-                    departmentData.length > 0 && (
-                      departmentData.map((item, index) => {
+                    departmentData?.length > 0 && (
+                      departmentData?.map((item, index) => {
                         return (
                           <Dropdown.Item key={`${index+1}_${item}`}>{item}</Dropdown.Item>
                         )
@@ -1005,8 +1007,8 @@ export default function User(props) {
 
                   <Dropdown.Item key="0_Select Department">Select Division</Dropdown.Item>
                   {
-                    divisionData.length > 0 && (
-                      divisionData.map((item, index) => {
+                    divisionData?.length > 0 && (
+                      divisionData?.map((item, index) => {
                         return (
                           <Dropdown.Item key={`${index+1}_${item}`}>{item}</Dropdown.Item>
                         )
@@ -1048,7 +1050,7 @@ export default function User(props) {
                   >
                     <Dropdown.Item key="">Select Job Level</Dropdown.Item>
                     {
-                      jobLevelData.map((item, index) => {
+                      jobLevelData?.map((item, index) => {
                         return (
                           <Dropdown.Item key={`${item}`}>{item}</Dropdown.Item>
                         )
