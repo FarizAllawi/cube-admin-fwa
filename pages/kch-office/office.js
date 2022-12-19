@@ -358,8 +358,8 @@ export default function Office(props) {
                 </Table.Header>
                 <Table.Body>
                   {
-                    officeDataTemp.length > 0 && (
-                      officeDataTemp.map((item, index) => {
+                    officeDataTemp?.length > 0 && (
+                      officeDataTemp?.map((item, index) => {
                         return (
                           <Table.Row key={index}>
                             <Table.Cell>{item.office_name}</Table.Cell>
