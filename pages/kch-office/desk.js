@@ -394,69 +394,71 @@ export default function Desk(props) {
                 </Table.Header>
                 <Table.Body>
                   {
-                    deskSectionDataTemp?.map((item, index) => {
-                      return (
-                        <Table.Row key={index}>
-                          <Table.Cell>{item.section_name}</Table.Cell>
-                          <Table.Cell>
-                            <StyledBadge type="active">Available</StyledBadge>
-                            : {item.available_desk}
-
-                            <StyledBadge type="inactive" css={{ marginLeft: "12px" }}>Unavailable</StyledBadge>
-                            : {item.unavailable_desk}
-                          </Table.Cell>
-                          <Table.Cell>
-                          <Row justify="center" align="center">
-                            <Col css={{ d: "flex" }}>
-                              <Tooltip content="Edit Desk Section">
-                                <IconButton onClick={() => {
-                                  setEditModals(item)
-                                  getDeskItem(item.uid_ds)
-                                }}>
-                                  <EditIcon size={20} fill="#979797" />
-                                </IconButton>
-                              </Tooltip>
-                            </Col>
-                            <Col css={{ d: "flex" }}>
-                              <Tooltip
-                                content="Delete Desk Section"
-                                color="error"
-                                onClick={() => setDeleteModals(item)}
-                              ><Popover>
-                                  <Popover.Trigger>
-                                    <IconButton>
-                                      <DeleteIcon size={20} fill="#FF0080" />
-                                    </IconButton>
-                                  </Popover.Trigger>
-                                  <Popover.Content>
-                                  <Grid.Container
-                                    css={{ borderRadius: "20px", padding: "0.75rem", maxWidth: "330px", boxShadow: "rgba(0,0,0, 0.5)" }}
-                                  >
-                                    <Row justify="center" align="center">
-                                      <Text b>Confirm</Text>
-                                    </Row>
-                                    <Row>
-                                      <Text>
-                                        Are you sure you want to delete this Desk Section
-                                      </Text>
-                                    </Row>
-                                    <Grid.Container justify="center" alignContent="center">
-                                      <Grid>
-                                        <Button size="sm" color="error" onPress={() => deleteDeskSection(item.uid_ds)}>
-                                          Delete
-                                        </Button>
-                                      </Grid>
+                    deskSectionDataTemp.length > 0 && (
+                      deskSectionDataTemp?.map((item, index) => {
+                        return (
+                          <Table.Row key={index}>
+                            <Table.Cell>{item.section_name}</Table.Cell>
+                            <Table.Cell>
+                              <StyledBadge type="active">Available</StyledBadge>
+                              : {item.available_desk}
+  
+                              <StyledBadge type="inactive" css={{ marginLeft: "12px" }}>Unavailable</StyledBadge>
+                              : {item.unavailable_desk}
+                            </Table.Cell>
+                            <Table.Cell>
+                            <Row justify="center" align="center">
+                              <Col css={{ d: "flex" }}>
+                                <Tooltip content="Edit Desk Section">
+                                  <IconButton onClick={() => {
+                                    setEditModals(item)
+                                    getDeskItem(item.uid_ds)
+                                  }}>
+                                    <EditIcon size={20} fill="#979797" />
+                                  </IconButton>
+                                </Tooltip>
+                              </Col>
+                              <Col css={{ d: "flex" }}>
+                                <Tooltip
+                                  content="Delete Desk Section"
+                                  color="error"
+                                  onClick={() => setDeleteModals(item)}
+                                ><Popover>
+                                    <Popover.Trigger>
+                                      <IconButton>
+                                        <DeleteIcon size={20} fill="#FF0080" />
+                                      </IconButton>
+                                    </Popover.Trigger>
+                                    <Popover.Content>
+                                    <Grid.Container
+                                      css={{ borderRadius: "20px", padding: "0.75rem", maxWidth: "330px", boxShadow: "rgba(0,0,0, 0.5)" }}
+                                    >
+                                      <Row justify="center" align="center">
+                                        <Text b>Confirm</Text>
+                                      </Row>
+                                      <Row>
+                                        <Text>
+                                          Are you sure you want to delete this Desk Section
+                                        </Text>
+                                      </Row>
+                                      <Grid.Container justify="center" alignContent="center">
+                                        <Grid>
+                                          <Button size="sm" color="error" onPress={() => deleteDeskSection(item.uid_ds)}>
+                                            Delete
+                                          </Button>
+                                        </Grid>
+                                      </Grid.Container>
                                     </Grid.Container>
-                                  </Grid.Container>
-                                  </Popover.Content>
-                                </Popover>
-                              </Tooltip>
-                            </Col>
-                          </Row>
-                          </Table.Cell>
-                        </Table.Row>
-                      )
-                    })
+                                    </Popover.Content>
+                                  </Popover>
+                                </Tooltip>
+                              </Col>
+                            </Row>
+                            </Table.Cell>
+                          </Table.Row>
+                        )
+                      })
+                    )
                   }
                 </Table.Body>
               </Table>

@@ -358,72 +358,74 @@ export default function Office(props) {
                 </Table.Header>
                 <Table.Body>
                   {
-                    officeDataTemp.map((item, index) => {
-                      return (
-                        <Table.Row key={index}>
-                          <Table.Cell>{item.office_name}</Table.Cell>
-                          <Table.Cell>{item.address}</Table.Cell>
-                          <Table.Cell>
-                          <Row justify="center" align="center">
-                            <Col css={{ d: "flex" }}>
-                              <Tooltip content="Details">
-                                <IconButton onClick={() => setDetailsModals(item)}>
-                                  <EyeIcon size={20} fill="#979797" />
-                                </IconButton>
-                              </Tooltip>
-                            </Col>
-                            <Col css={{ d: "flex" }}>
-                              <Tooltip content="Edit Office">
-                                <IconButton onClick={() => setEditModals(item)}>
-                                  <EditIcon size={20} fill="#979797" />
-                                </IconButton>
-                              </Tooltip>
-                            </Col>
-                            <Col css={{ d: "flex" }}>
-                              <Tooltip
-                                content="Delete Office"
-                                color="error"
-                                onClick={() => setDeleteModals(item)}
-                              ><Popover>
-                                  <Popover.Trigger>
-                                    <IconButton>
-                                      <DeleteIcon size={20} fill="#FF0080" />
-                                    </IconButton>
-                                  </Popover.Trigger>
-                                  <Popover.Content>
-                                  <Grid.Container
-                                    css={{ borderRadius: "20px", padding: "0.75rem", maxWidth: "330px", boxShadow: "rgba(0,0,0, 0.5)" }}
-                                  >
-                                    <Row justify="center" align="center">
-                                      <Text b>Confirm</Text>
-                                    </Row>
-                                    <Row>
-                                      <Text>
-                                        Are you sure you want to delete this Office
-                                      </Text>
-                                    </Row>
-                                    <Grid.Container justify="space-between" alignContent="center">
-                                      <Grid>
-                                        <Button size="sm" light>
-                                          Cancel
-                                        </Button>
-                                      </Grid>
-                                      <Grid>
-                                        <Button size="sm" color="error" onPress={() => deleteOffice(item)}>
-                                          Delete
-                                        </Button>
-                                      </Grid>
+                    officeData.length > 0 && (
+                      officeDataTemp.map((item, index) => {
+                        return (
+                          <Table.Row key={index}>
+                            <Table.Cell>{item.office_name}</Table.Cell>
+                            <Table.Cell>{item.address}</Table.Cell>
+                            <Table.Cell>
+                            <Row justify="center" align="center">
+                              <Col css={{ d: "flex" }}>
+                                <Tooltip content="Details">
+                                  <IconButton onClick={() => setDetailsModals(item)}>
+                                    <EyeIcon size={20} fill="#979797" />
+                                  </IconButton>
+                                </Tooltip>
+                              </Col>
+                              <Col css={{ d: "flex" }}>
+                                <Tooltip content="Edit Office">
+                                  <IconButton onClick={() => setEditModals(item)}>
+                                    <EditIcon size={20} fill="#979797" />
+                                  </IconButton>
+                                </Tooltip>
+                              </Col>
+                              <Col css={{ d: "flex" }}>
+                                <Tooltip
+                                  content="Delete Office"
+                                  color="error"
+                                  onClick={() => setDeleteModals(item)}
+                                ><Popover>
+                                    <Popover.Trigger>
+                                      <IconButton>
+                                        <DeleteIcon size={20} fill="#FF0080" />
+                                      </IconButton>
+                                    </Popover.Trigger>
+                                    <Popover.Content>
+                                    <Grid.Container
+                                      css={{ borderRadius: "20px", padding: "0.75rem", maxWidth: "330px", boxShadow: "rgba(0,0,0, 0.5)" }}
+                                    >
+                                      <Row justify="center" align="center">
+                                        <Text b>Confirm</Text>
+                                      </Row>
+                                      <Row>
+                                        <Text>
+                                          Are you sure you want to delete this Office
+                                        </Text>
+                                      </Row>
+                                      <Grid.Container justify="space-between" alignContent="center">
+                                        <Grid>
+                                          <Button size="sm" light>
+                                            Cancel
+                                          </Button>
+                                        </Grid>
+                                        <Grid>
+                                          <Button size="sm" color="error" onPress={() => deleteOffice(item)}>
+                                            Delete
+                                          </Button>
+                                        </Grid>
+                                      </Grid.Container>
                                     </Grid.Container>
-                                  </Grid.Container>
-                                  </Popover.Content>
-                                </Popover>
-                              </Tooltip>
-                            </Col>
-                          </Row>
-                          </Table.Cell>
-                        </Table.Row>
-                      )
-                    })
+                                    </Popover.Content>
+                                  </Popover>
+                                </Tooltip>
+                              </Col>
+                            </Row>
+                            </Table.Cell>
+                          </Table.Row>
+                        )
+                      })
+                    )
                   }
                 </Table.Body>
               </Table>

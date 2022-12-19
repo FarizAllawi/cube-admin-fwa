@@ -668,11 +668,13 @@ export default function User(props) {
                   >
                   <Dropdown.Item key="0_Select Superior For Update">Select Superior For Update</Dropdown.Item>
                   {
-                    userData.map((item, index) => {
-                      return (
-                        <Dropdown.Item key={`${index+1}_${item.nik}-${item.name}`}>{item.nik} - {item.name}</Dropdown.Item>
-                      )
-                    })
+                    userData.length > 0 && (
+                      userData.map((item, index) => {
+                        return (
+                          <Dropdown.Item key={`${index+1}_${item.nik}-${item.name}`}>{item.nik} - {item.name}</Dropdown.Item>
+                        )
+                      })
+                    )
                   }
                   </Dropdown.Menu>
                 </Dropdown>
@@ -699,11 +701,13 @@ export default function User(props) {
                   >
                   <Dropdown.Item key="0_Select Department For Update">Select Department For Update</Dropdown.Item>
                   {
-                    departmentData.map((item, index) => {
-                      return (
-                        <Dropdown.Item key={`${index+1}_${item}`}>{item}</Dropdown.Item>
-                      )
-                    })
+                    departmentData.length > 0 && (
+                      departmentData.map((item, index) => {
+                        return (
+                          <Dropdown.Item key={`${index+1}_${item}`}>{item}</Dropdown.Item>
+                        )
+                      })
+                    )
                   }
                   </Dropdown.Menu>
                 </Dropdown>
@@ -731,11 +735,13 @@ export default function User(props) {
 
                   <Dropdown.Item key="0_Select Department">Select Division For Update</Dropdown.Item>
                   {
-                    divisionData.map((item, index) => {
-                      return (
-                        <Dropdown.Item key={`${index+1}_${item}`}>{item}</Dropdown.Item>
-                      )
-                    })
+                    divisionData.length > 0 && (
+                      divisionData.map((item, index) => {
+                        return (
+                          <Dropdown.Item key={`${index+1}_${item}`}>{item}</Dropdown.Item>
+                        )
+                      })
+                    )
                   }
                   </Dropdown.Menu>
                 </Dropdown>
@@ -773,11 +779,13 @@ export default function User(props) {
                   >
                     <Dropdown.Item key="">Select Job Level</Dropdown.Item>
                     {
-                      jobLevelData.map((item, index) => {
-                        return (
-                          <Dropdown.Item key={`${item}`}>{item}</Dropdown.Item>
-                        )
-                      })
+                      jobLevelData.length > 0 && (
+                        jobLevelData.map((item, index) => {
+                          return (
+                            <Dropdown.Item key={`${item}`}>{item}</Dropdown.Item>
+                          )
+                        })
+                      )
                     }
                     <Dropdown.Item key="INTERN">INTERN</Dropdown.Item>
                     <Dropdown.Item key="OUTSOURCE">OUTSOURCE</Dropdown.Item>
@@ -932,11 +940,13 @@ export default function User(props) {
                   >
                   <Dropdown.Item key="0_Select Superior">Select Superior</Dropdown.Item>
                   {
-                    userData.map((item, index) => {
-                      return (
-                        <Dropdown.Item key={`${index+1}_${item.nik}-${item.name}`}>{item.nik} - {item.name}</Dropdown.Item>
-                      )
-                    })
+                    userData.length > 0 && (
+                      userData.map((item, index) => {
+                        return (
+                          <Dropdown.Item key={`${index+1}_${item.nik}-${item.name}`}>{item.nik} - {item.name}</Dropdown.Item>
+                        )
+                      })
+                    )
                   }
                   </Dropdown.Menu>
                 </Dropdown>
@@ -962,11 +972,13 @@ export default function User(props) {
                   >
                   <Dropdown.Item key="0_Select Department">Select Department</Dropdown.Item>
                   {
-                    departmentData.map((item, index) => {
-                      return (
-                        <Dropdown.Item key={`${index+1}_${item}`}>{item}</Dropdown.Item>
-                      )
-                    })
+                    departmentData.length > 0 && (
+                      departmentData.map((item, index) => {
+                        return (
+                          <Dropdown.Item key={`${index+1}_${item}`}>{item}</Dropdown.Item>
+                        )
+                      })
+                    )
                   }
                   </Dropdown.Menu>
                 </Dropdown>
@@ -993,11 +1005,13 @@ export default function User(props) {
 
                   <Dropdown.Item key="0_Select Department">Select Division</Dropdown.Item>
                   {
-                    divisionData.map((item, index) => {
-                      return (
-                        <Dropdown.Item key={`${index+1}_${item}`}>{item}</Dropdown.Item>
-                      )
-                    })
+                    divisionData.length > 0 && (
+                      divisionData.map((item, index) => {
+                        return (
+                          <Dropdown.Item key={`${index+1}_${item}`}>{item}</Dropdown.Item>
+                        )
+                      })
+                    )
                   }
                   </Dropdown.Menu>
                 </Dropdown>

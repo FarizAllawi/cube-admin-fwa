@@ -38,4 +38,4 @@ COPY --from=builder /app/package.json ./package.json
 EXPOSE 3031
 ENV NEXT_TELEMETRY_DISABLED 1
 
-CMD ["npm", "start"]
+CMD npm run start
