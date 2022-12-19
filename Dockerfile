@@ -35,7 +35,7 @@ COPY --from=builder /app/package.json ./package.json
 
 # USER nextjs
 
-EXPOSE 3031
+EXPOSE 3032
 ENV NEXT_TELEMETRY_DISABLED 1
 
 CMD npm run start
